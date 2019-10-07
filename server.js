@@ -1,14 +1,9 @@
-const express = require('express')
+const express = require('express');
+const requireApi = require('./middleware/RequireApi')
+
 const app = express();
 
-app.use((req, res, next) => {
-    if (!req.get("x-api-key")) {
-        console.log("No X-API-Key Set")
-        return;
-    }
-
-    next();
-})
+app.use(requireApi);
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
