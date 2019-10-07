@@ -1,0 +1,16 @@
+{
+    "name": "LA1TV-Backend",
+    "version": "1.0.0",
+    "description": "The re-written backend for the LA1TV website",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": ""
+    },
+    "keywords": [],
+    "author": "Melody Nicholls, LA1TV",
+    "license": "MIT",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
