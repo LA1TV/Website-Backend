@@ -1,6 +1,15 @@
 const express = require('express')
 const app = express();
 
+app.use((req, res, next) => {
+    if (!req.get("x-api-key")) {
+        console.log("No X-API-Key Set")
+        return;
+    }
+
+    next();
+})
+
 app.get('/', (req, res) => {
     res.send('Hello World!')
 });
