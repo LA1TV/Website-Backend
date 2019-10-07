@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "nodemon server",
-        "lint": "eslint src/js"
+        "init-lint": "eslint --init",
+        "lint": "eslint *.js --fix"
     },
     "keywords": [],
     "author": "Melody Nicholls, LA1TV",
@@ -17,6 +18,11 @@
         "mysql2": "^1.7.0"
     },
     "devDependencies": {
-        "eslint": "^6.5.1"
+        "eslint": "^6.5.1",
+        "eslint-config-standard": "^14.1.0",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-node": "^10.0.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-standard": "^4.0.1"
     }
 }
