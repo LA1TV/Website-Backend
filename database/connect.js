@@ -1,6 +1,9 @@
 const mysql = require('mysql2');
 
-// Create the connection pool. The pool-specific settings are the defaults
+// > TODO: Test the connection
+// > TODO: Create database creation scripts
+// > TODO: Create seeders
+
 const pool = mysql.createPool({
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USERNAME,
