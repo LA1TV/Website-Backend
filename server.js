@@ -1,7 +1,9 @@
 const express = require('express');
 const requireApi = require('./middleware/RequireApi')
+const dotenv = require('dotenv');
 
 const app = express();
+dotenv.config();
 
 app.use(requireApi);
 

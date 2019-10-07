@@ -12,7 +12,9 @@
     "author": "Melody Nicholls, LA1TV",
     "license": "MIT",
     "dependencies": {
-        "express": "^4.17.1"
+        "dotenv": "^8.1.0",
+        "express": "^4.17.1",
+        "mysql2": "^1.7.0"
     },
     "devDependencies": {
         "eslint": "^6.5.1"
