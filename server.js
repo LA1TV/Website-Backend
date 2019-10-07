@@ -1,8 +1,10 @@
-const http = require('http')
+const express = require('express')
+const app = express();
 
-console.log("Backend loading, beginning");
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+});
 
-http.createServer(function(req, res) {
-    console.log(req.headers.X - API - KEY)
-    res.end();
-}).listen(8080);
+app.listen(8000, () => {
+    console.log('Example app listening on port 8000!')
+});
