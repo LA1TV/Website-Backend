@@ -1,5 +1,7 @@
 const mysql = require("./connect")
 
+// > TODO: Generate database based off of SQL in table.
+
 function generateDatabase() {
     // mysql.query(
     //     "CREATE SCHEMA IF NOT EXISTS ${process.env.DATABASE};" +
