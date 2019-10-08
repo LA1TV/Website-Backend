@@ -1,6 +1,6 @@
 const express = require('express')
 const dotenv = require('dotenv')
-const generateDB = require('./database/builder')
+const generateAPIKey = require('./database/api-keys')
 
 const requireApi = require('./middleware/RequireApi')
 
@@ -13,10 +13,11 @@ app.use(requireApi)
 // > TODO: Implement videos route and database
 // > TODO: Implement playlists route
 
-app.post('/database/builder', (req, res) => {
-    generateDB();
-    res.send("Generating DB")
+app.post('/database/API', (req, res) => {
+    generateAPIKey();
+    res.send("Generating API - Currently in progress")
 })
+
 
 app.listen(8000, () => {
     console.log('Example app listening on port 8000!')
