@@ -1,6 +1,8 @@
 const express = require('express')
 const dotenv = require('dotenv')
-const generateAPIKey = require('./database/api-keys')
+const helmet = require('helmet')
+
+const generateAPIKey = require('./database/api-key/create')
 
 const requireApi = require('./middleware/RequireApi')
 
@@ -8,6 +10,7 @@ const app = express()
 dotenv.config()
 
 app.use(requireApi)
+app.use(helmet())
 
 // > TODO: Implement users route
 // > TODO: Implement videos route and database
