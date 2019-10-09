@@ -7,7 +7,8 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "nodemon server",
         "init-lint": "eslint --init",
-        "lint": "eslint *.js --fix"
+        "lint": "eslint *.js --fix",
+        "push": "npm run lint && git add -A && git commit -m \"Pushing all changes with eslint applied\" && git push"
     },
     "keywords": [],
     "author": "Melody Nicholls, LA1TV",
