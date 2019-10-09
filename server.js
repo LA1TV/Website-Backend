@@ -1,5 +1,4 @@
 const express = require('express')
-const dotenv = require('dotenv')
 const helmet = require('helmet')
 
 const generateAPIKey = require('./database/api-key/create')
@@ -7,8 +6,8 @@ const generateAPIKey = require('./database/api-key/create')
 const requireApi = require('./middleware/RequireApi')
 
 const app = express()
-dotenv.config()
 
+// > Middleware for security headers
 app.use(requireApi)
 app.use(helmet())
 

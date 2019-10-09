@@ -13,7 +13,6 @@
     "author": "Melody Nicholls, LA1TV",
     "license": "MIT",
     "dependencies": {
-        "dotenv": "^8.1.0",
         "express": "^4.17.1",
         "helmet": "^3.21.1",
         "mysql2": "^1.7.0",
