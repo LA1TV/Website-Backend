@@ -18,7 +18,8 @@ const requireAPI = (req, res, next) => {
         if (JSON.parse(result).enabled === 1) {
             next();
         } else {
-            res.status(401).send("Invalid or No API Key provided");
+            res.status(401).send("Invalid or No API Key provided")
+            return
         }
     })
 }
