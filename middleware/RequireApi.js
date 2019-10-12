@@ -1,4 +1,4 @@
-const getAPI = require('../database/api-key/get')
+const { getSpecifiedKey } = require('../database/api-key/get')
 
 
 // > TODO: Implement checking from database for valid API keys
@@ -13,8 +13,7 @@ const requireAPI = (req, res, next) => {
         return;
     }
 
-    getAPI(req.get("x-api-key")).then((result) => {
-        console.log(JSON.parse(result))
+    getSpecifiedKey(req.get("x-api-key")).then((result) => {
         if (JSON.parse(result).enabled === 1) {
             next();
         } else {

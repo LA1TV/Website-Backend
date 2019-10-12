@@ -1,6 +1,7 @@
 const mysql = require('../connect')
 
-const getKey = (api) => {
+// > Returns a specified key
+const getSpecifiedKey = (api) => {
     return new Promise((resolve, reject) => {
         mysql.promise().execute('SELECT * FROM `api_keys` WHERE `api_key` = ?', [api])
             .then(([rows, fields]) => {
@@ -12,4 +13,25 @@ const getKey = (api) => {
     })
 }
 
-module.exports = getKey
+// > Returns all API keys
+const getAllKeys = ({ start, quantity = 10 }) => {
+    let tempSQL = ""
+    if (start !== undefined) {
+        tempSQL = " ROWNUM <= " + start + " LIMIT " + quantity
+    }
+
+    return new Promise((resolve, reject) => {
+        mysql.promise().execute('SELECT * FROM `api_keys`' + tempSQL + ';')
+            .then(([rows, fields]) => {
+                resolve(JSON.stringify(rows[0]))
+            })
+            .catch(err => {
+                reject(err)
+            })
+    })
+}
+
+module.exports = {
+    getSpecifiedKey,
+    getAllKeys
+}
