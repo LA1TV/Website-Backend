@@ -3,7 +3,7 @@ const { createKey } = require('./create')
 const { updateKey } = require('./update')
 const { deleteKey } = require('./delete')
 
-module.exports {
+module.exports = {
     getAllKeys,
     getSpecifiedKey,
     createKey,
