@@ -7,7 +7,7 @@ const app = express()
 
 const routes = require('./routes')
 
-// > Middleware for security headers
+// > Middleware for security headers and basic security
 app.use(requireApi)
 app.use(helmet())
 
@@ -17,5 +17,5 @@ app.use(helmet())
 app.use('/', routes)
 
 app.listen(8000, () => {
-  console.log('Example app listening on port 8000!')
+    console.log('LA1TV API is starting up. Console logging is not used in this version.')
 })
