@@ -14,16 +14,17 @@ const getSpecifiedKey = (api) => {
 }
 
 // > Returns all API keys
-const getAllKeys = ({ start, quantity = 10 }) => {
-    let tempSQL = ""
-    if (start !== undefined) {
-        tempSQL = " ROWNUM <= " + start + " LIMIT " + quantity
+const getAllKeys = ({ start = -1, quantity = 10 }) => {
+    var tempSQL = ""
+
+    if (start !== -1) {
+        tempSQL = " WHERE ID >= " + start + " LIMIT " + quantity
     }
 
     return new Promise((resolve, reject) => {
         mysql.promise().execute('SELECT * FROM `api_keys`' + tempSQL + ';')
             .then(([rows, fields]) => {
-                resolve(JSON.stringify(rows[0]))
+                resolve(rows)
             })
             .catch(err => {
                 reject(err)

@@ -14,6 +14,8 @@ app.use(helmet())
 // > TODO: Implement users route
 // > TODO: Implement videos route and database
 // > TODO: Implement playlists route
+
+// > Re-route all routes to the route controller
 app.use('/', routes)
 
 app.listen(8000, () => {
