@@ -40,4 +40,35 @@ router.post('/', (req, res) => {
         })
 })
 
+// > Update an API key with new values
+// > THIS IS NOT UPDATING THE TIME
+router.patch('/:id', (req, res) => {
+    let parameters = {
+        enabled: req.body.enabled,
+        view_vod_uri: req.body.view_vod_uri,
+        view_stream_uri: req.body.view_stream_uri,
+        use_webhook: req.body.use_webhook
+    }
+
+    updateKey(req.params.id, parameters)
+        .then(returnValues => {
+            res.status(200).json({ data: returnValues })
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({ error: "Update of API key failed" })
+        })
+})
+
+// > Delete an API based on the URL
+router.delete('/:id', (req, res) => {
+    deleteKey(req.params.id)
+        .then(returnValues => {
+            res.status(200).json({ data: returnValues })
+        })
+        .catch(err => {
+            res.status(500).json({ error: "Deletion of API key failed" })
+        })
+})
+
 module.exports = router
