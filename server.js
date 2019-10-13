@@ -1,5 +1,6 @@
 const express = require('express')
 const helmet = require('helmet')
+const bodyParser = require('body-parser')
 
 const requireApi = require('./middleware/RequireApi')
 
@@ -11,6 +12,9 @@ const routes = require('./routes')
 app.use(requireApi)
 app.use(helmet())
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // > TODO: Implement users route
 // > TODO: Implement videos route and database
 // > TODO: Implement playlists route
@@ -19,5 +23,5 @@ app.use(helmet())
 app.use('/', routes)
 
 app.listen(8000, () => {
-  console.log('LA1TV API is starting up. Console logging is not used in this version.')
+    console.log('LA1TV API is starting up. Console logging is not used in this version.')
 })
