@@ -6,12 +6,13 @@ const cache = require('../../middleware/cache')
 
 // > Return all keys
 // > With the option of choosing how many you want and from where
-router.get('/', cache(10), (req, res) => {
-    let parameters = {
-        req.params.start,
-        req.params.quantity
+router.get('/', cache(), (req, res) => {
+    let parameter = {
+        start: req.params.start,
+        quantity: req.params.quantity
     }
-    getAllKeys(parameters)
+
+    getAllKeys(parameter)
         .then(data => {
             res.status(200).json(data)
         })
