@@ -12,8 +12,8 @@ const routes = require('./routes')
 app.use(requireApi)
 app.use(helmet())
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 
 // > TODO: Implement users route
 // > TODO: Implement videos route and database
@@ -23,5 +23,5 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', routes)
 
 app.listen(8000, () => {
-    console.log('LA1TV API is starting up. Console logging is not used in this version.')
+  console.log('LA1TV API is starting up. Console logging is not used in this version.')
 })
