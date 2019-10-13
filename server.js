@@ -19,5 +19,5 @@ app.use(helmet())
 app.use('/', routes)
 
 app.listen(8000, () => {
-    console.log('LA1TV API is starting up. Console logging is not used in this version.')
+  console.log('LA1TV API is starting up. Console logging is not used in this version.')
 })
