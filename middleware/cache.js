@@ -24,3 +24,5 @@ const cache = (duration = CACHING.DURATION) => {
         }
     }
 }
+
+module.exports = cache
