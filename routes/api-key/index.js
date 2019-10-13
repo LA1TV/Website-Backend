@@ -2,11 +2,16 @@ const express = require('express')
 const router = express.Router()
 
 const { createKey, getAllKeys, getSpecifiedKey, updateKey, deleteKey } = require('../../database/api-key')
+const cache = require('../../middleware/cache')
 
 // > Return all keys
 // > With the option of choosing how many you want and from where
-router.get('/', (req, res) => {
-    getAllKeys({})
+router.get('/', cache(10), (req, res) => {
+    let parameters = {
+        req.params.start,
+        req.params.quantity
+    }
+    getAllKeys(parameters)
         .then(data => {
             res.status(200).json(data)
         })
