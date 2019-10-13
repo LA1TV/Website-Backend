@@ -11,7 +11,7 @@ const updateKey = (api, { enabled, view_vod_uri, view_stream_uri, use_webhook })
                 ' ' + view_vod_uri_SQL +
                 ' ' + view_stream_uri_SQL +
                 ' ' + use_webhook_SQL +
-                ' WHERE api_key = ' + api + ';').then(([fields, rows]) => {
+                ' WHERE `api_key` = ?;', [api]).then(([fields, rows]) => {
                 resolve("success")
             })
             .catch(err => {

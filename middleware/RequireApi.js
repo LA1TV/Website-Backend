@@ -7,7 +7,6 @@ const { getSpecifiedKey } = require('../database/api-key/get')
 
 const requireAPI = (req, res, next) => {
     if (!req.get("x-api-key")) {
-        console.log("No X-API-KEY sent");
         res.status(401).send("Invalid or No API Key provided");
 
         return;
