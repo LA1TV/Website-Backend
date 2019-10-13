@@ -14,13 +14,16 @@ const requireAPI = (req, res, next) => {
     }
 
     getSpecifiedKey(req.get("x-api-key")).then((result) => {
-        if (JSON.parse(result).enabled === 1) {
-            next();
-        } else {
-            res.status(401).send("Invalid or No API Key provided")
-            return
-        }
-    })
+            if (JSON.parse(result).enabled === 1) {
+                next();
+            } else {
+                res.status(401).send("Invalid or No API Key provided")
+                return
+            }
+        })
+        .catch(err => {
+            res.status(500).send("Error retrieving API-Key information from database")
+        })
 }
 
 module.exports = requireAPI
