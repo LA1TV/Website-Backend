@@ -14,4 +14,6 @@ const createKey = ({ enabled = 1, view_vod_uri = 0, view_stream_uri = 0, use_web
     })
 }
 
-module.exports = createKey
+module.exports = {
+    createKey
+}
