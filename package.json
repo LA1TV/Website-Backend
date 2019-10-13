@@ -16,6 +16,7 @@
     "dependencies": {
         "express": "^4.17.1",
         "helmet": "^3.21.1",
+        "memory-cache": "^0.2.0",
         "mysql2": "^1.7.0",
         "uuid": "^3.3.3"
     },
