@@ -7,15 +7,19 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "nodemon server",
         "init-lint": "eslint --init",
-        "lint": "eslint *.js --fix"
+        "lint": "eslint *.js --fix",
+        "push": "npm run lint && git add -A && git commit -m \"Pushing all changes with eslint applied\" && git push"
     },
     "keywords": [],
     "author": "Melody Nicholls, LA1TV",
     "license": "MIT",
     "dependencies": {
-        "dotenv": "^8.1.0",
+        "body-parser": "^1.19.0",
         "express": "^4.17.1",
-        "mysql2": "^1.7.0"
+        "helmet": "^3.21.1",
+        "memory-cache": "^0.2.0",
+        "mysql2": "^1.7.0",
+        "uuid": "^3.3.3"
     },
     "devDependencies": {
         "eslint": "^6.5.1",

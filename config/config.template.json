@@ -1,0 +1,12 @@
+{
+    "DATABASE": {
+        "USERNAME": "",
+        "DATABASE": "",
+        "PASSWORD": "",
+        "HOST": "",
+        "PORT": 3306
+    },
+    "CACHING": {
+        "DURATION": 15
+    }
+}
